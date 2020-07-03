@@ -6,6 +6,11 @@ let urllib = require('urllib');
 let Phrase = require("kelton_gallant-palindrome");
 let url = process.argv[2];
 
+if (url == null || url.trim() === '') {
+    console.log("\nERROR: NO ARGUMENT ENTERED. \nCommand should be in the form of: $wikp <url>\n");
+    process.exit(-1);
+}
+
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 
