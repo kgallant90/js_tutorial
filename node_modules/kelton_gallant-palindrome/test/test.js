@@ -18,14 +18,17 @@ describe("Phrase", function() {
       let mixedCasePalindrome = new Phrase("RaceCar");
       assert(mixedCasePalindrome.palindrome());
     });
-
     it("should return true for a palindrome with punctuation", function() {
       let punctuatedPalindrome = new Phrase("Madam, I'm Adam.");
       assert(punctuatedPalindrome.palindrome());
     });
     it("should return true for a palindrome with null elements (i.e. numbers)", function() {
-      let numberedPalindrome = new Phrase("ab123ba");
+      let numberedPalindrome = new Phrase("ab123454321ba");
       assert(numberedPalindrome.palindrome());
+    });
+    it("should return false for an empty string", function() {
+      let blankPalindrome = new Phrase("");
+      assert(!blankPalindrome.palindrome());
     });
 
     describe("#letters", function() {
